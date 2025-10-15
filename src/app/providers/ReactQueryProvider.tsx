@@ -1,12 +1,21 @@
-// app/providers/ReactQueryProvider.tsx
-"use client"; // must be client
+"use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState, ReactNode } from "react";
 
 export default function ReactQueryProvider({ children }: { children: ReactNode }) {
-  // Create QueryClient on first render only
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            gcTime: 1000 * 60 * 30, 
+            staleTime: 1000 * 60 * 10, 
+            refetchOnWindowFocus: false, 
+          },
+        },
+      })
+  );
 
   return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 }
