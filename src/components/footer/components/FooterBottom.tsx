@@ -10,13 +10,13 @@ export default function FooterBottom() {
         <Image src="/images/logo.png" alt="Gulf Logo" width={64} height={64} className="object-contain" />
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <div className="flex items-center gap-4 text-sm text-gray-600">
           <span>2022</span>
           <span>წესები</span>
           <span>კონფიდენციალურობა</span>
         </div>
-        <button className="flex items-center gap-2 link-button-light">
+        <button className="items-center gap-2 link-button-light hidden sm:flex">
           <span>ქართული</span>
           <ChevronDown className="w-4 h-4" />
         </button>

@@ -4,7 +4,7 @@
 
 @theme {
   --dark-blue: rgb(29, 42, 62);
-  --soft-yellow: rgb(247, 249, 151);
+  --soft-yellow: rgb(247, 249, 251);
 }
 
 
@@ -19,24 +19,35 @@
     .bold-medium-text{
         @apply  font-bold text-[16px] leading-[1.5] tracking-[0%];
     }
+    .normal-large-text{
+      @apply  font-normal text-4xl leading-[1.5] tracking-[0%] text-white;
+    }
+    .grey-medium-text{
+      @apply  font-normal text-[16px] leading-[1.5] tracking-[0%] text-gray-400 ;
+    }
+
+
+
 /* buttons */
-    .btn-dark {
-      @apply px-4 py-2 rounded font-medium transition-colors;
-      background-color: var(--dark-blue);
-      color: white;
-    }
-    .btn-dark:hover {
-      background-color: var(--soft-yellow);
-      color: var(--dark-blue);
-    }
-  
-    .btn-light {
-      @apply px-4 py-2 rounded font-medium transition-colors border border-gray-300;
-      background-color: var(--soft-yellow);
-      color: var(--dark-blue);
-    }
-    .btn-light:hover {
-      background-color: var(--dark-blue);
-      color: var(--soft-yellow);
-    }
+   /* buttons */
+.btn-dark {
+  @apply px-4 py-2 rounded font-medium transition-colors duration-400 ease-in-out;
+  background-color: var(--dark-blue);
+  color: white;
+}
+.btn-dark:hover {
+  background-color: var(--soft-yellow);
+  color: var(--dark-blue);
+}
+
+.btn-light {
+  @apply px-4 py-2 rounded font-medium transition-colors duration-400 ease-in-out;
+  background-color: var(--soft-yellow);
+  color: var(--dark-blue);
+}
+.btn-light:hover {
+  background-color: var(--dark-blue);
+  color: var(--soft-yellow);
+}
+
   }

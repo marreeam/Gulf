@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Hero from '@/features/hero/Hero';
 const Landing = () => {
   return (
-    <div>hello</div>
+      <Hero/>
   )
 }
 

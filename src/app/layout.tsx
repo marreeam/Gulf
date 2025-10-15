@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${notoSansGeorgian.className} } flex min-h-screen flex-col bg-white text-gray-900`}>
+<body className={`${notoSansGeorgian.className} flex min-h-screen flex-col bg-white text-gray-900`}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
