@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
 
+
+@theme {
+  --dark-blue: rgb(29, 42, 62);
+  --soft-yellow: rgb(247, 249, 151);
+}
+
+
 @layer components {
+/* texts */
     .link-button {
     @apply block text-gray-900 font-medium hover:text-[#00205B] transition-colors leading-[1.5] tracking-[0%];
     }
@@ -10,5 +18,25 @@
     }
     .bold-medium-text{
         @apply  font-bold text-[16px] leading-[1.5] tracking-[0%];
+    }
+/* buttons */
+    .btn-dark {
+      @apply px-4 py-2 rounded font-medium transition-colors;
+      background-color: var(--dark-blue);
+      color: white;
+    }
+    .btn-dark:hover {
+      background-color: var(--soft-yellow);
+      color: var(--dark-blue);
+    }
+  
+    .btn-light {
+      @apply px-4 py-2 rounded font-medium transition-colors border border-gray-300;
+      background-color: var(--soft-yellow);
+      color: var(--dark-blue);
+    }
+    .btn-light:hover {
+      background-color: var(--dark-blue);
+      color: var(--soft-yellow);
     }
   }
