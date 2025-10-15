@@ -3,7 +3,7 @@ import { LoginForm } from "./components/HeroLoginForm"
 
 export default function Hero() {
     return (
-      <main className="min-h-screen px-8 py-32 sm:px-8 lg:px-16">
+      <main className="px-8 py-32 sm:px-8 lg:px-16">
         <div className="mx-auto flex flex-col lg:flex-row items-start gap-8 lg:flex-nowrap sm:items-center">
           <div className="flex-1 relative max-w-full h-full lg:max-w-5xl">
             <HeroSection />
