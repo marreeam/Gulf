@@ -9,6 +9,8 @@
 
 
 @layer components {
+
+
   .link-button {
     @apply block text-gray-900 font-medium hover:text-[#00205B] transition-colors leading-[1.5] tracking-[0%];
   }
@@ -63,3 +65,7 @@
     color: var(--soft-yellow);
   }
 }
+
+
+
+

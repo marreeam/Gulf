@@ -1,4 +1,3 @@
-// components/ui/IconButton.tsx
 "use client";
 
 import { ReactNode } from "react";
@@ -17,7 +16,7 @@ export default function IconButton({
   className = "",
 }: IconButtonProps) {
   const baseClasses =
-    "inline-flex items-center gap-2 rounded-full font-medium btn-dark";
+    "group inline-flex items-center gap-2 rounded-full font-medium btn-dark transition-all duration-400 ease-in-out cursor-pointer";
 
   return (
     <button
@@ -25,7 +24,17 @@ export default function IconButton({
       className={`${baseClasses} ${className}`}
     >
       {children && <span>{children}</span>}
-      <span className=" btn-light p-2 rounded-full text-black hover:text-white duration-400 ease-in-out">{icon}</span>
+      <span
+        className="
+          btn-light 
+          p-2 rounded-full 
+          text-black 
+          transition-all duration-400 ease-in-out 
+          group-hover:bg-[var(--dark-blue)] group-hover:text-white
+        "
+      >
+        {icon}
+      </span>
     </button>
   );
 }
