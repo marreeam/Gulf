@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import GenericSwiper from "@/components/ui/GenericSwiper";
 import SliderControls from "@/components/ui/SliderControls";
 import ServiceCard from "./components/ServiceCard";
-import { SERVICES, Service } from "@/constants/Services";
+import { Service, SERVICES } from "@/constants/Services";
 
 export default function ServicesSection() {
   const swiperRef = useRef<any>(null);
