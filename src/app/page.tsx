@@ -4,6 +4,7 @@ import PricesSection from '@/features/prices/prices';
 import ServicesSection from '@/features/servicesSection/ServicesSection';
 import News from '@/features/news/News';
 import BusinessCard from '@/features/BusinessCard/businessCard';
+import Advantages from '@/features/advantages/Advantages';
 
 
 const Landing = () => {
@@ -12,6 +13,7 @@ const Landing = () => {
       <Hero/>
       <PricesSection/>
       <ServicesSection/>
+      <Advantages/>
       <News/>
       <BusinessCard/>
       </div>

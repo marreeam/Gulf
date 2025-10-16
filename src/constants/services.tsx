@@ -10,7 +10,7 @@ export const SERVICES: Service[] = [
     id: "1",
     title: "Gulf club - ქულების დაგროვების სისტემა",
     description: "Gulf Club ის სახით კომპანია გალფი თავის მომხმარებელს მომენტალური ფასდაკლებისა და ქულების დაგროვების ბარათს სთავაზობს.",
-    link: "/services/performance",
+    link: "",
   },
   {
     id: "2",
