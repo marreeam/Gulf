@@ -16,7 +16,7 @@ interface EIAApiResponse {
   warnings?: { description: string }[];
 }
 
-const EIA_API_KEY = "J0505p7LtSChyli3SXvIbodoOg39IM5YYi6BBqXU";
+const EIA_API_KEY = process.env.NEXT_PUBLIC_EIA_API_KEY;
 
 export async function fetchPricesHistory(signal?: AbortSignal): Promise<Price[]> {
   const url = "https://api.eia.gov/v2/petroleum/pri/gnd/data/";

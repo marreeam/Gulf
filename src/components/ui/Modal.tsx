@@ -14,10 +14,8 @@ type ModalProps = {
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Lock body scroll
   useLockBodyScroll(isOpen);
 
-  // Animate modal on open
   useEffect(() => {
     if (isOpen && modalRef.current) {
       gsap.fromTo(

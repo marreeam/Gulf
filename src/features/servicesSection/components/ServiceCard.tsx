@@ -15,7 +15,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div
-      className={`bg-white rounded-4xl p-10 flex flex-col gap-6 h-[492px] ${className}`}
+      className={`bg-white rounded-4xl p-5 sm:p-10 flex flex-col gap-6 h-[492px] ${className}`}
       style={style}
     >
         <div className=" bg-[rgb(253,242,235)] w-fit p-8 rounded-full">

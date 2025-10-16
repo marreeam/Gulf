@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram } from "lucide-react";
-import Dropdown from "../../header/components/Dropdown";
+import Dropdown from "../../ui/Dropdown";
 
 interface FooterTopProps {
   onCopy: (text: string) => void;

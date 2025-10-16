@@ -10,8 +10,7 @@ export interface Price {
   period: string;
 }
 
-//ეს არ არის მიზანშეწონილი პროექტებისთვის, მაგრამ გატესტვა რომ შეძლოთ, ამ ფაილშივე ვატან api key-ს
-const EIA_API_KEY = "J0505p7LtSChyli3SXvIbodoOg39IM5YYi6BBqXU";
+const EIA_API_KEY = process.env.NEXT_PUBLIC_EIA_API_KEY;
 
 interface EIAResponseData {
   series: string;

@@ -26,7 +26,7 @@ export default function ServicesSection() {
           disabledNext={isEnd}
         />
       </div>
-      <section className="px-8 py-12 flex justify-center">
+      <section className="flex justify-center">
       <div className="w-full max-w-[1600px]">
       <GenericSwiper<Service>
         items={SERVICES}

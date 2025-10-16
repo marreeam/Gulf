@@ -19,8 +19,7 @@ interface NewsApiResponse {
   message?: string;
 }
 
-// Api Keys ვატან ფაილში, რადგან თქვენთანაც იმუშაოს; რა თქმა უნდა , ეს რომ რეალური პროექტი იყოს, აქ არ გავატანდი; 
-const NEWS_API_KEY = "9f275b07066541aba763209178f73911";
+const NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY ;
 
 
 export async function fetchNews(
