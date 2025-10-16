@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hidden lg:block w-full lg:w-1/3 flex-shrink-0">
+        <div className="hidden lg:block w-full lg:w-1/3 flex-shrink-0 border border-gray-200 rounded-4xl">
           <LoginForm />
         </div>
       </div>

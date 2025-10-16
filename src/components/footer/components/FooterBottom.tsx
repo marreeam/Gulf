@@ -7,7 +7,7 @@ export default function FooterBottom() {
   return (
     <div className="border-t border-gray-200 pt-8 flex flex-col gap-5">
       <div>
-        <Image src="/images/logo.png" alt="Gulf Logo" width={64} height={64} className="object-contain" />
+        <Image src="/logo.png" alt="Gulf Logo" width={64} height={64} className="object-contain" />
       </div>
 
       <div className="flex items-center justify-between ">

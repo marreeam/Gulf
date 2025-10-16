@@ -10,8 +10,12 @@ const notoSansGeorgian = Noto_Sans_Georgian({
 });
 
 export const metadata: Metadata = {
-  title: "Gulf Business",
+  title: "Gulf",
   description: "Stay updated with live fuel prices and automotive news.",
+  icons: {
+    icon: "/logo.png", 
+    shortcut: "/logo.png",
+  },
 };
 
 export default function RootLayout({

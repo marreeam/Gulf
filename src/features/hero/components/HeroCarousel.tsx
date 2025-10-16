@@ -7,7 +7,6 @@ export function HeroSection() {
   const slide = {
     title: "Gulf card-ი დაიბრუნე ქეშბექი ქელების სახით",
     description: "კომპანია გალფი თავის კორპორატიულ მომხმარებელს სთავაზობს ქულების დაგროვების სისტემას.",
-    image: "/black-credit-card-with-blue-glow.jpg",
   }
 
   return (
@@ -36,17 +35,6 @@ export function HeroSection() {
           bgColor="bg-white/10"
           iconColor="text-white"
         />
-      </div>
-
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-96 h-96 lg:w-[600px] lg:h-[600px] opacity-40">
-        <div className="relative w-full h-full">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-600/30 to-purple-600/30 blur-3xl" />
-          <img
-            src={slide.image || "/placeholder.svg"}
-            alt="Gulf Card"
-            className="h-full w-full object-contain"
-          />
-        </div>
       </div>
     </div>
   )

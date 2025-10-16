@@ -17,7 +17,7 @@ export default function HeaderNav({ mobileMenuOpen, toggleMobileMenu }: HeaderNa
 
           <Link href="/" className="flex items-center gap-2 sm:gap-3">
             <div className="relative h-10 w-10 sm:h-12 sm:w-12">
-              <Image src="/images/logo.png" alt="Gulf Logo" fill className="object-contain" />
+              <Image src="/logo.png" alt="Gulf Logo" fill className="object-contain" />
             </div>
             <span className="text-xl hidden sm:inline font-bold text-gray-900">ბიზნესი</span>
           </Link>

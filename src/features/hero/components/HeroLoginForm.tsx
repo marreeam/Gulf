@@ -15,7 +15,7 @@ export function LoginForm() {
   };
 
   return (
-    <div className="flex items-center justify-center lg:items-start lg:pt-12 border border-gray-200 rounded-4xl">
+    <div className="flex items-center justify-center lg:items-start lg:pt-12 ">
       <div className="w-full max-w-md rounded-3xl bg-white p-8">
         <h2 className="mb-8  bold-medium-text">ავტორიზაცია</h2>
 
