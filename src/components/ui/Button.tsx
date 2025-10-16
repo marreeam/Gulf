@@ -13,7 +13,7 @@ export default function Button({
   type = "button", 
   className = "" 
 }: ButtonProps) {
-  const baseClass = "h-14 w-full text-base rounded-4xl font-medium transition-colors";
+  const baseClass = "h-14 w-full text-base rounded-4xl font-medium transition-colors ";
   const variantClass = variant === "dark" ? "btn-dark" : "btn-light";
 
   return (

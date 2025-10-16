@@ -7,9 +7,23 @@
   --soft-yellow: rgb(247, 249, 251);
 }
 
+@layer utilities {
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .perspective-1500 {
+    perspective: 1500px;
+  }
+}
+
 
 @layer components {
-
 
 
 
@@ -44,12 +58,13 @@
   .titles-black {
     font-weight: 700;
     font-size: clamp(1.75rem, 2vw + 1rem, 3rem); 
-    line-height: 1.3;
+    line-height: 1.9;
   }
 
   .btn-dark {
-    @apply px-4 py-2 rounded font-medium transition-colors duration-400 ease-in-out;
+    @apply px-4 py-2 rounded font-medium transition-colors duration-400 ease-in-out border ;
     background-color: var(--dark-blue);
+    border-color: var(--dark-blue);;
     color: white;
   }
   .btn-dark:hover {

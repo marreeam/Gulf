@@ -32,7 +32,7 @@ export default function SliderControls({
       <button
         onClick={!disabledPrev ? onPrev : undefined}
         disabled={disabledPrev}
-        className={`group flex h-12 w-12 items-center justify-center rounded-full backdrop-blur-sm transition
+        className={`group  h-12 w-12 hidden sm:flex items-center justify-center rounded-full backdrop-blur-sm transition
           ${bgColor} ${!disabledPrev ? hoverBgColor : ""}
           ${disabledPrev ? "opacity-40 cursor-default" : "cursor-pointer"}
         `}
@@ -47,7 +47,7 @@ export default function SliderControls({
       <button
         onClick={!disabledNext ? onNext : undefined}
         disabled={disabledNext}
-        className={`group flex h-12 w-12 items-center justify-center rounded-full backdrop-blur-sm transition
+        className={`group flex h-12 w-12 items-center hidden sm:flex  justify-center rounded-full backdrop-blur-sm transition
           ${bgColor} ${!disabledNext ? hoverBgColor : ""}
           ${disabledNext ? "opacity-40 cursor-default" : "cursor-pointer"}
         `}
