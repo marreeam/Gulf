@@ -3,6 +3,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import gsap from "gsap";
+import { useLockBodyScroll } from "@/hook/useLockBodyScroll";
 
 type ModalProps = {
   isOpen: boolean;
@@ -13,6 +14,10 @@ type ModalProps = {
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
+  // Lock body scroll
+  useLockBodyScroll(isOpen);
+
+  // Animate modal on open
   useEffect(() => {
     if (isOpen && modalRef.current) {
       gsap.fromTo(
