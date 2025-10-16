@@ -97,23 +97,21 @@ export default function BusinessCardSection() {
             className="relative w-full h-full preserve-3d transition-transform duration-700"
             style={{ transform: "rotateY(0deg) rotateZ(-5deg)" }}
           >
-            {/* Front */}
             <div className="absolute w-full h-full rounded-3xl overflow-hidden backface-hidden">
               <Image
                 src="/images/businessCard/one-business-card.png"
                 alt="Front Card"
                 fill
-                style={{ objectFit: 'contain' }} // Ensure the image fits within the div
+                style={{ objectFit: 'contain' }} 
               />
             </div>
 
-            {/* Back */}
             <div className="absolute w-full h-full rounded-3xl overflow-hidden rotate-y-180 backface-hidden">
               <Image
                 src="/images/businessCard/one-business-card-back.png"
                 alt="Back Card"
                 fill
-                style={{ objectFit: 'contain' }} // Ensure the image fits within the div
+                style={{ objectFit: 'contain' }} 
               />
             </div>
           </div>
