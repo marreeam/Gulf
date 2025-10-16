@@ -45,19 +45,23 @@ export default function News() {
         isListView ? (
           <NewsList articles={articles} />
         ) : (
-          <GenericSwiper
-            items={articles}
-            renderItem={(article) => <NewsCard news={article} />}
-            swiperRef={swiperRef}
-            slidesPerViewConfig={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 2.3 },
-            }}
-            setIsBeginning={setIsBeginning}
-            setIsEnd={setIsEnd}
-            showMobileDots={true}
-          />
+          <section className="px-8 py-12 flex justify-center">
+          <div className="w-full max-w-[1600px]">
+            <GenericSwiper
+              items={articles}
+              renderItem={(article) => <NewsCard news={article} />}
+              swiperRef={swiperRef}
+              slidesPerViewConfig={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 1.5 },
+                1024: { slidesPerView: 2.3 },
+              }}
+              setIsBeginning={setIsBeginning}
+              setIsEnd={setIsEnd}
+              showMobileDots={true}
+            />
+          </div>
+        </section>
         )
       )}
     </section>

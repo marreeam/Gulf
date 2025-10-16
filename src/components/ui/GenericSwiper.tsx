@@ -31,7 +31,7 @@ export default function GenericSwiper<T>({
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative">
+    <div className="">
       <Swiper
         onSwiper={(swiper) => {
           if (swiperRef) swiperRef.current = swiper;

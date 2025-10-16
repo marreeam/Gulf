@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function NewsCard({ news }: { news: NewsArticle }) {
   return (
-<article className="bg-white rounded-4xl p-3 flex flex-col sm:flex-row gap-4 h-full border border-gray-200">
+<article className="bg-white rounded-4xl p-3 flex flex-col sm:flex-row gap-0 sm:gap-4 h-96 border sm:h-80 border-gray-200">
   {news.urlToImage && (
     <div className="flex-shrink-0 sm:w-1/3 w-full h-auto rounded-2xl overflow-hidden">
       <img

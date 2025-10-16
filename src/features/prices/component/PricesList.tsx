@@ -28,7 +28,7 @@ export default function PricesList({ prices, isLoading, error }: PricesListProps
                 start={0}
                 end={price.value}
                 decimals={2}
-                duration={4.5}
+                duration={1.5}
                 separator=","
               />
             </span>

@@ -26,20 +26,24 @@ export default function ServicesSection() {
           disabledNext={isEnd}
         />
       </div>
-
+      <section className="px-8 py-12 flex justify-center">
+      <div className="w-full max-w-[1600px]">
       <GenericSwiper<Service>
         items={SERVICES}
         renderItem={(service) => <ServiceCard service={service} />}
         swiperRef={swiperRef}
         slidesPerViewConfig={{
           640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
+          768: { slidesPerView: 1.5 },
           1024: { slidesPerView: 3 },
         }}
         setIsBeginning={setIsBeginning}
         setIsEnd={setIsEnd}
         showMobileDots={true}
       />
+
+      </div>
+      </section>
     </section>
   );
 }

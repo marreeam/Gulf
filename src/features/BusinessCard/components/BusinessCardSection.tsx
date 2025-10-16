@@ -68,15 +68,15 @@ export default function BusinessCardSection() {
 
   return (
     <section className="flex flex-col items-center  p-12 sm:py-40 sm:px-12  rounded-4xl bg-[var(--soft-yellow)]">
-      <div className="flex flex-col lg:flex-row items-center sm:gap-12 w-full max-w-7xl">
+      <div className="flex flex-col lg:flex-row items-center md:gap-12 w-full max-w-7xl">
         <div className="flex-1 flex flex-col gap-6 text-center lg:text-left">
           <h2 className="titles-black text-3xl sm:text-4xl lg:text-5xl leading-tight">
             გალფის ბიზნეს ბარათი თქვენი ბიზნესისთვის
           </h2>
           <p className="text-gray-700 text-base sm:text-lg lg:text-xl">
-          Gulf card ი არის კორპორატიული ბარათი, საწვავის
-ტალონებით შესყიდვის თანამედროვე შემცვლელი,
-რომელიც გაგიმარტივებთ ბიზნესის მართვას.
+                  Gulf card ი არის კორპორატიული ბარათი, საწვავის
+                  ტალონებით შესყიდვის თანამედროვე შემცვლელი,
+                  რომელიც გაგიმარტივებთ ბიზნესის მართვას.
           </p>
           <div className="flex justify-center lg:justify-start ">
             <Button onClick={() => console.log("Clicked")} className="w-max border ">
