@@ -10,7 +10,7 @@ export default function PricesSection() {
 
   return (
     <div className="px-8 py-12 sm:px-8 sm:py-32 flex flex-col gap-12">
-      <PricesHeader onArchiveClick={() => console.log("Clicked!")} />
+      <PricesHeader />
       <PricesList prices={data} isLoading={isLoading} error={error} />
     </div>
   );
