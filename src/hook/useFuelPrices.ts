@@ -1,13 +1,14 @@
-import { useQuery, UseQueryOptions, UseQueryResult, QueryKey } from "@tanstack/react-query";
-import { fetchPrices, Price } from "@/services/api/FetchPrices";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { fetchPrices,Price } from "@/services/FetchPrices";
+
 
 export function useFuelPrices(): UseQueryResult<Price[], Error> {
-  const options: UseQueryOptions<Price[], Error, Price[], QueryKey> = {
+  return useQuery<Price[], Error>({
     queryKey: ["fuelPrices"],
-    queryFn: fetchPrices,
-    staleTime: 1000 * 60 * 10,
+    queryFn: ({ signal }) => fetchPrices(signal), 
+    staleTime: 10 * 60 * 1000, 
+    gcTime: 20 * 60 * 1000,
     refetchOnWindowFocus: false,
-  };
-
-  return useQuery<Price[], Error>(options);
+    retry: 1,
+  });
 }

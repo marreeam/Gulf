@@ -40,6 +40,7 @@ export default function ServicesSlider({
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 3 },
         }}
         modules={[Navigation]}
         speed={600}

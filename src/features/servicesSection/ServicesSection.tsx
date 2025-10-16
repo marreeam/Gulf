@@ -10,7 +10,7 @@ export default function ServicesSection() {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <section className="px-6 sm:px-8 lg:px-16 py-32 bg-[var(--soft-yellow)]">
+    <section className=" px-6 sm:px-8 lg:px-16 py-32 bg-[var(--soft-yellow)]">
       <div className="flex items-center justify-between mb-8">
         <h2 className="titles-black text-left">სერვისები</h2>
 

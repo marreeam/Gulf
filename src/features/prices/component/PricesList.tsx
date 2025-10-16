@@ -1,5 +1,5 @@
 import CountUp from "react-countup";
-import { Price } from "@/services/api/FetchPrices";
+import { Price } from "@/services/FetchPrices";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 interface PricesListProps {
