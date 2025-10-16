@@ -1,20 +1,17 @@
-// services/api.ts
 import axios from "axios";
 
 export const api = axios.create({
-  timeout: 10_000, // 10s timeout
+  timeout: 10_000, 
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
   },
 });
 
-// Optional: central response interceptor to convert non-2xx to thrown errors with message
 api.interceptors.response.use(
   
   (res) => res,
   (error) => {
-    // Normalize error
     const message =
       error?.response?.data?.message ||
       error?.response?.data?.error ||

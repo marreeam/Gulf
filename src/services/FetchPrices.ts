@@ -1,5 +1,6 @@
-import axios from "axios";
+
 import { FUEL_NAME_TRANSLATIONS } from "@/constants/FuelTranslations";
+import { api } from "./api";
 
 export interface Price {
   series: string;
@@ -40,7 +41,7 @@ export async function fetchPrices(signal?: AbortSignal): Promise<Price[]> {
   startDate.setFullYear(today.getFullYear() - 1);
   const start = startDate.toISOString().split("T")[0];
 
-  const { data } = await axios.get<EIAApiResponse>(url, {
+  const { data } = await api.get<EIAApiResponse>(url, {
     params: {
       api_key: EIA_API_KEY,
       frequency: "weekly",
