@@ -9,7 +9,8 @@ export interface Price {
   period: string;
 }
 
-const EIA_API_KEY = process.env.NEXT_PUBLIC_EIA_API_KEY;
+//ეს არ არის მიზანშეწონილი პროექტებისთვის, მაგრამ გატესტვა რომ შეძლოთ, ამ ფაილშივე ვატან api key-ს
+const EIA_API_KEY = "J0505p7LtSChyli3SXvIbodoOg39IM5YYi6BBqXU";
 
 interface EIAResponseData {
   series: string;
@@ -27,17 +28,17 @@ interface EIAApiResponse {
   warnings?: { description: string }[];
 }
 
-/**
- * Fetch latest fuel prices from EIA API
- * Returns latest price per series
- */
 export async function fetchPrices(signal?: AbortSignal): Promise<Price[]> {
-  if (!EIA_API_KEY) {
-    throw new Error("EIA API Key missing. Please set NEXT_PUBLIC_EIA_API_KEY in env.");
-  }
-
 
   const url = "https://api.eia.gov/v2/petroleum/pri/gnd/data/";
+
+  //უკან დაბრუნებს ბოლო კვირის ფასებს ყველა სერიისთვის
+
+  const today = new Date();
+  const endDate = today.toISOString().split("T")[0]; 
+  const startDate = new Date(today);
+  startDate.setFullYear(today.getFullYear() - 1);
+  const start = startDate.toISOString().split("T")[0];
 
   const { data } = await axios.get<EIAApiResponse>(url, {
     params: {
@@ -53,10 +54,10 @@ export async function fetchPrices(signal?: AbortSignal): Promise<Price[]> {
         ],
       },
       sort: [{ column: "period", direction: "desc" }],
-      start: "2025-01-01",
-      end: "2025-10-13",
+      start,
+      end: endDate,
       offset: 0,
-      length: 100, 
+      length: 100,
     },
     signal,
   });
@@ -67,10 +68,13 @@ export async function fetchPrices(signal?: AbortSignal): Promise<Price[]> {
 
   const latestBySeries: Record<string, Price> = {};
 
+
+  // გამოვარჩიოთ მხოლოდ ბოლო მონაცემი თითოეული სერიისთვის
   for (const d of data.response.data) {
     if (!latestBySeries[d.series]) {
       const originalName = d["product-name"] || d["series-description"];
-      const translatedName = FUEL_NAME_TRANSLATIONS[originalName] || originalName;
+      const translatedName =
+        FUEL_NAME_TRANSLATIONS[originalName] || originalName;
 
       latestBySeries[d.series] = {
         series: d.series,

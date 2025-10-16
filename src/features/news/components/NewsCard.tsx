@@ -1,4 +1,3 @@
-// components/NewsCard.tsx
 "use client";
 
 import Image from "next/image";

@@ -19,9 +19,9 @@ interface NewsApiResponse {
   message?: string;
 }
 
-const NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY;
+// Api Keys ვატან ფაილში, რადგან თქვენთანაც იმუშაოს; რა თქმა უნდა , ეს რომ რეალური პროექტი იყოს, აქ არ გავატანდი; 
+const NEWS_API_KEY = "9f275b07066541aba763209178f73911";
 
-if (!NEWS_API_KEY) throw new Error("NEXT_PUBLIC_NEWS_API_KEY is not set in your .env");
 
 export async function fetchNews(
   query: string,

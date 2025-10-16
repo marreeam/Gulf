@@ -13,7 +13,6 @@ export default function GradientCardSection() {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Check viewport width
   useEffect(() => {
     const checkWidth = () => setIsVisible(window.innerWidth >= 1200);
     checkWidth();
@@ -21,7 +20,6 @@ export default function GradientCardSection() {
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
-  // GSAP entrance animation
   useEffect(() => {
     if (!isVisible || !cardRef.current) return;
 
@@ -42,7 +40,6 @@ export default function GradientCardSection() {
     );
   }, [isVisible]);
 
-  // Hover tilt effect
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
@@ -50,10 +47,10 @@ export default function GradientCardSection() {
     const y = e.clientY - rect.top - rect.height / 2;
 
     gsap.to(cardRef.current, {
-      rotationY: x / 10, // horizontal tilt
-      rotationX: -y / 10, // vertical tilt
-      x: x / 50,          // subtle horizontal shift
-      y: y / 50,          // subtle vertical shift
+      rotationY: x / 10, 
+      rotationX: -y / 10, 
+      x: x / 50,          
+      y: y / 50,        
       duration: 0.3,
       ease: "power3.out",
     });
@@ -104,14 +101,12 @@ export default function GradientCardSection() {
       </h1>
 
       <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-12">
-        {/* LEFT SIDE */}
         <div className="flex-1 flex flex-col gap-10 text-left text-gray-900 z-10">
           {ADVANTAGES.slice(0, 2).map((item) => (
             <InfoItem key={item.id} {...item} />
           ))}
         </div>
 
-        {/* CENTER CARD */}
         <div
           ref={cardRef}
           onMouseMove={handleMouseMove}
@@ -130,7 +125,6 @@ export default function GradientCardSection() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="flex-1 flex flex-col gap-10 text-left text-gray-900 z-10">
           {ADVANTAGES.slice(2, 4).map((item) => (
             <InfoItem key={item.id} {...item} />

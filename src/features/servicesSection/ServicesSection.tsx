@@ -1,8 +1,10 @@
 "use client";
 
-import ServicesSlider from "./components/ServicesSlider";
-import SliderControls from "@/components/ui/SliderControls";
 import { useRef, useState } from "react";
+import GenericSwiper from "@/components/ui/GenericSwiper";
+import SliderControls from "@/components/ui/SliderControls";
+import ServiceCard from "./components/ServiceCard";
+import { SERVICES, Service } from "@/constants/Services";
 
 export default function ServicesSection() {
   const swiperRef = useRef<any>(null);
@@ -10,7 +12,7 @@ export default function ServicesSection() {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <section className=" px-6 sm:px-8 lg:px-16 py-32 bg-[var(--soft-yellow)]">
+    <section className="px-8 py-12 sm:px-8 sm:py-32 bg-[var(--soft-yellow)]">
       <div className="flex items-center justify-between mb-8">
         <h2 className="titles-black text-left">სერვისები</h2>
 
@@ -25,10 +27,18 @@ export default function ServicesSection() {
         />
       </div>
 
-      <ServicesSlider
+      <GenericSwiper<Service>
+        items={SERVICES}
+        renderItem={(service) => <ServiceCard service={service} />}
         swiperRef={swiperRef}
+        slidesPerViewConfig={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
         setIsBeginning={setIsBeginning}
         setIsEnd={setIsEnd}
+        showMobileDots={true}
       />
     </section>
   );

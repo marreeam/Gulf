@@ -1,6 +1,6 @@
 "use client";
 
-import { Service } from "@/constants/services";
+import { Service } from "@/constants/Services";
 import { ChevronRight, ChevronUpSquare, Layers2 } from "lucide-react";
 interface ServiceCardProps {
   service: Service;
@@ -22,7 +22,8 @@ export default function ServiceCard({
             <Layers2 className="text-[rgb(238,118,62)]"/>
         </div>
       <h3 className="bold-medium-text text-[26px] mt-4">{service.title}</h3>
-      <p className="grey-medium-text mt-2 flex-grow min-h-[70px] sm:min-h-[120px] md:min-h-[130px] lg:min-h-[100px] ">{service.description}</p>
+      <p className="grey-medium-text mt-2 flex-grow min-h-[70px] sm:min-h-[120px] md:min-h-[130px] lg:min-h-[110px] line-clamp-2">
+  {service.description}</p>
       <a href={service.link} className="link-button mt-4 font-semibold leading-[1.5] tracking-[0%] text-[rgb(238,118,62)] hover:text-[rgb(236,178,149)] flex items-center">
        გაიგე მეტი
        <ChevronRight/>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram } from "lucide-react";
-import Dropdown from "./Dropdown";
+import Dropdown from "../../header/components/Dropdown";
 
 interface FooterTopProps {
   onCopy: (text: string) => void;
@@ -12,7 +12,6 @@ interface FooterTopProps {
 export default function FooterTop({ onCopy }: FooterTopProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-      {/* Menu */}
       <div>
         <h3 className="bold-medium-text mb-7 hidden md:block">მენიუ</h3>
         <ul className="space-y-3 hidden md:block">

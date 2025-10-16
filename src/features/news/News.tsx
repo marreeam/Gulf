@@ -2,49 +2,49 @@
 
 import { useRef, useState } from "react";
 import { useFetchNews } from "@/hook/useFetchNews";
-import NewsSlider from "./components/NewsSlider";
-import SliderControls from "@/components/ui/SliderControls";
-import IconButton from "@/components/ui/IconButton";
-import { Layers } from "lucide-react";
+import GenericSwiper from "@/components/ui/GenericSwiper";
+import NewsCard from "./components/NewsCard";
+import NewsHeader from "./components/NewsHeader";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 
 export default function News() {
   const query = "Apple";
-  const { data, isLoading, isError } = useFetchNews(query); 
+  const { data, isLoading, isError } = useFetchNews(query);
   const articles = data?.articles ?? [];
 
   const swiperRef = useRef<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  if (isLoading) return <p>Loading news...</p>;
-  if (isError) return <p>Error loading news.</p>;
-  if (!articles.length) return <p>No news found.</p>;
-
   return (
-    <section className="px-6 sm:px-8 lg:px-16 py-32">
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="titles-black text-left">სიახლეები</h2>
-        <div className="flex gap-14">
-        <IconButton icon={<Layers/>} className="hidden sm:flex" >სია</IconButton>
+    <section className="px-8 py-12 sm:px-8 sm:py-32">
+      <NewsHeader swiperRef={swiperRef} isBeginning={isBeginning} isEnd={isEnd} />
+      {isLoading && <LoadingSpinner/>}
+      {isError && (<div className="flex justify-center items-center h-64">
+    <p className="text-center text-red-500 text-lg">Error loading news.</p>
+  </div>
+)}
+     {!isLoading && !isError && articles.length === 0 && (
+  <div className="flex justify-center items-center h-64">
+    <p className="text-center text-gray-500">No news found.</p>
+  </div>
+)}
 
-        <SliderControls
-          onPrev={() => swiperRef.current?.slidePrev()}
-          onNext={() => swiperRef.current?.slideNext()}
-          bgColor="bg-[var(--dark-blue)]"
-          hoverBgColor="hover:bg-[rgb(237,241,248)]"
-          iconColor="text-white"
-          disabledPrev={isBeginning}
-          disabledNext={isEnd}
+      {!isLoading && !isError && articles.length > 0 && (
+        <GenericSwiper
+          items={articles}
+          renderItem={(article) => <NewsCard news={article} />}
+          swiperRef={swiperRef}
+          slidesPerViewConfig={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 2.3 },
+          }}
+          setIsBeginning={setIsBeginning}
+          setIsEnd={setIsEnd}
+          showMobileDots={true}
         />
-        </div>
-      </div>
-
-      <NewsSlider
-        articles={articles}
-        swiperRef={swiperRef}
-        setIsBeginning={setIsBeginning}
-        setIsEnd={setIsEnd}
-      />
+      )}
     </section>
   );
 }

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
 
 interface DropdownProps {
   title: string;
@@ -11,6 +12,27 @@ interface DropdownProps {
 
 export default function Dropdown({ title, links }: DropdownProps) {
   const [open, setOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!contentRef.current) return;
+
+    if (open) {
+      gsap.to(contentRef.current, {
+        height: "auto",
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    } else {
+      gsap.to(contentRef.current, {
+        height: 0,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
+    }
+  }, [open]);
 
   return (
     <div className="md:hidden">
@@ -27,9 +49,8 @@ export default function Dropdown({ title, links }: DropdownProps) {
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        ref={contentRef}
+        style={{ height: 0, opacity: 0, overflow: "hidden" }}
       >
         <ul className="flex flex-col space-y-2 pl-2">
           {links.map((link) => (
