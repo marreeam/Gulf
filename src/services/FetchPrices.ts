@@ -10,7 +10,7 @@ export interface Price {
   period: string;
 }
 
-const EIA_API_KEY = process.env.NEXT_PUBLIC_EIA_API_KEY;
+const EIA_API_KEY = "J0505p7LtSChyli3SXvIbodoOg39IM5YYi6BBqXU";
 
 interface EIAResponseData {
   series: string;

@@ -19,7 +19,7 @@ interface NewsApiResponse {
   message?: string;
 }
 
-const NEWS_API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY ;
+const NEWS_API_KEY = "9f275b07066541aba763209178f73911";
 
 
 export async function fetchNews(
